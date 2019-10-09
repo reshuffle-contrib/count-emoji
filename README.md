@@ -1,13 +1,9 @@
-[![CircleCI](https://circleci.com/gh/reshufflehq/blank.svg?style=svg)](https://circleci.com/gh/reshufflehq/blank)
-
-This is a [Reshuffle](https://reshuffle.com/) template.
-
 ## About
 
-A starting point for creating your app with Reshuffle.
+Saves the emojis and emoji counts in the database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project was inspired from https://github.com/conorhastings/react-emoji-react.
 
 ## Screenshots
 
-<img src="./app-screen.png" width="50%" height="50%">
+<img src="./preview.png" width="50%" height="50%">

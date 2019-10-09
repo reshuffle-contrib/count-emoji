@@ -1,11 +1,11 @@
 {
-  "name": "blank",
+  "name": "react_reshuffle_emojis",
   "version": "0.0.1",
   "license": "MIT",
   "keywords": [
     "reshuffle",
     "react",
-    "blank",
+    "emojis",
     "start",
     "fullstack"
   ],
@@ -22,6 +22,7 @@
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
+    "react-emoji-react": "^0.3.0",
     "react-scripts": "3.0.1"
   },
   "scripts": {

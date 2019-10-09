@@ -1,32 +1,55 @@
 import React from 'react';
-import logo from './assets/logo.svg';
-import reshuffle from './assets/reshuffle.png';
-import plus from './assets/plus.png';
-import './App.css';
+import '@reshuffle/code-transform/macro';
+import EmojiReact from 'react-emoji-react';
+
+import { getEmojis, emojiCount, newEmoji } from '../backend/backend';
 
 function App() {
+  const [emojis, setEmojis] = React.useState([]);
+
+  React.useEffect(() => {
+    async function fetchFromDb() {
+      let newEmojis = await getEmojis();
+      setEmojis([...newEmojis]);
+    }
+    try {
+      fetchFromDb();
+    } catch {
+      console.log('An Error Occured');
+    }
+  }, []);
+
+  const onReaction = async name => {
+    try {
+      let newEmojis = await emojiCount(
+        emojis.map(emoji => {
+          if (emoji.name === name) {
+            emoji.count += 1;
+          }
+          return emoji;
+        }),
+      );
+      setEmojis([...newEmojis]);
+    } catch {
+      console.log('An Error Occured');
+    }
+  };
+
+  const onEmojiClick = async name => {
+    try {
+      let newEmojis = await newEmoji({ name, count: 1 });
+      setEmojis([...newEmojis]);
+    } catch {
+      console.log('An Error Occured');
+    }
+  };
+
   return (
-    <div className="App">
-      <div className="App-header">
-      <div className="logos">
-        <img src={logo} className="App-logo logo" alt="logo" />
-        <img src={plus} className="logo-plus" alt="logo"/>
-        <img src={reshuffle} className="logo-re" alt="logo" />
-        </div>
-        {/* <div className="App-section"> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload. <br/>
-          Edit backend/backend.js to develop your backend code.
-        </p>
-        <a
-          className="App-link"
-          href="https://reshuffle.com"
-          target="blank"
-        >
-          Learn Reshuffle
-        </a>
-      </div>
-    </div>
+    <EmojiReact
+      reactions={emojis ? emojis : []}
+      onReaction={name => onReaction(name)}
+      onEmojiClick={name => onEmojiClick(name)}
+    />
   );
 }
 
