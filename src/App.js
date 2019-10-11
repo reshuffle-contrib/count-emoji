@@ -15,7 +15,7 @@ function App() {
     try {
       fetchFromDb();
     } catch {
-      console.log('An Error Occured');
+      console.error('An error on fetch');
     }
   }, []);
 
@@ -31,7 +31,7 @@ function App() {
       );
       setEmojis([...newEmojis]);
     } catch {
-      console.log('An Error Occured');
+      console.error('An error adding count');
     }
   };
 
@@ -40,7 +40,7 @@ function App() {
       let newEmojis = await newEmoji({ name, count: 1 });
       setEmojis([...newEmojis]);
     } catch {
-      console.log('An Error Occured');
+      console.error('An error on adding new emoji');
     }
   };
 

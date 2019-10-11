@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "key": "emojis",
+      "data": [
+        { "name": "earth_americas", "count": 1 },
+        { "name": "eight_pointed_black_star", "count": 2 },
+        { "name": "envelope", "count": 1 }
+      ]
+    }
+  ]
+}
