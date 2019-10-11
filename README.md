@@ -1,13 +1,12 @@
 ## About
 
-Saves the emojis and emoji counts in the database
+Saves emoji and reaction counts in the database.
 
-Project was inspired from https://github.com/conorhastings/react-emoji-react.
+Project was inspired by https://github.com/conorhastings/react-emoji-react.
 
 ## Screenshots
 
-<img src="./preview.png" width="50%" height="50%">
-
+<img src="./app-screen.png" width="50%" height="50%">
 
 ## Data
 
