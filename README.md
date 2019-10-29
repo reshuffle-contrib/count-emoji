@@ -1,5 +1,4 @@
 ## About
-
 Saves emoji and reaction counts in the database.
 
 Project was inspired by https://github.com/conorhastings/react-emoji-react.
